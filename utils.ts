@@ -17,7 +17,7 @@ export async function queryPineconeVectorStore(
   console.log(apiOutput);
   
   const queryEmbedding = Array.from(apiOutput);
-  // console.log("Querying database vector store...");
+  
   const index = client.Index(indexName);
   const queryResponse = await index.namespace(namespace).query({
     topK: 5,
